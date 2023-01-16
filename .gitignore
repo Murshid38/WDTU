@@ -1,3 +1,7 @@
 .alpackages
 .vscode
 .snapshots
+Practice.Page.al
+ImportFromCSV.XMLPort.al
+ListOfCustomers.Query.al
+Top5Customers.Query.al

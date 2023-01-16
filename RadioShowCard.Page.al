@@ -3,6 +3,8 @@ page 50101 "Radio Show Card"
     Caption = 'Radio Show Card';
     PageType = Card;
     SourceTable = "Radio Show";
+    UsageCategory = Lists;
+    ApplicationArea = all;
 
     layout
     {

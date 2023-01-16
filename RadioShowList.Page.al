@@ -5,7 +5,7 @@ page 50100 "Radio Show List"
     PageType = List;
     SourceTable = "Radio Show";
     UsageCategory = Lists;
-    
+
     layout
     {
         area(content)
@@ -65,4 +65,21 @@ page 50100 "Radio Show List"
             }
         }
     }
+    // actions
+    // {
+    //     area(Processing)
+    //     {
+
+    //         action(ImportData)
+    //         {
+    //             ApplicationArea = All;
+
+    //             trigger OnAction()
+    //             begin
+    //                 Xmlport.Run(50101);
+    //             end;
+    //         }
+    //     }
+
+    // }
 }
