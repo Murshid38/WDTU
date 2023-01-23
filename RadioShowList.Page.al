@@ -5,6 +5,7 @@ page 50100 "Radio Show List"
     PageType = List;
     SourceTable = "Radio Show";
     UsageCategory = Lists;
+    CardPageId = "Radio Show Card";
 
     layout
     {

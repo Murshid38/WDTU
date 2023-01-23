@@ -63,4 +63,15 @@ table 50100 "Radio Show"
             Clustered = true;
         }
     }
+
+    fieldgroups
+    {
+        fieldgroup(DropDown; "No.", "Radio Show Type", Name) { }
+        fieldgroup(Brick; "No.", "Radio Show Type", Name) { }
+    }
+
+    // trigger OnInsert()
+    // begin
+    //     Message('Hello');
+    // end;
 }

@@ -5,3 +5,5 @@ Practice.Page.al
 ImportFromCSV.XMLPort.al
 ListOfCustomers.Query.al
 Top5Customers.Query.al
+LotAvailbyBin.Query.al
+LotAvailbyBin.Page.al
