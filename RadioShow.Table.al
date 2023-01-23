@@ -55,6 +55,49 @@ table 50100 "Radio Show"
             Caption = 'Royalty Cost';
             DataClassification = CustomerContent;
         }
+
+        field(1000; Frequency; Option)
+        {
+            OptionMembers = Hourly,Daily,Weekly,Monthly;
+            DataClassification = CustomerContent;
+        }
+
+        field(1010; "PSA Planned Quantity"; Integer)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(1020; "Ads Planned Quantity"; Integer)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(1030; "News Required"; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(1040; "News Duration"; Integer)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(1050; "Sports Required"; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(1060; "Sports Duration"; Integer)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(1070; "Weather Required"; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(1080; "Weather Duration"; Integer)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(1090; "Date Filter"; Integer)
+        {
+            FieldClass = FlowFilter;
+        }
     }
     keys
     {
