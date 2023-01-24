@@ -2,7 +2,9 @@ table 50101 "Radio Show Type"
 {
     Caption = 'Radio Show Type';
     DataClassification = ToBeClassified;
-    
+    LookupPageId = "Radio Show Type";
+    DrillDownPageId = "Radio Show Type";
+
     fields
     {
         field(1; "Code"; Code[20])
@@ -10,17 +12,10 @@ table 50101 "Radio Show Type"
             Caption = 'Code';
             DataClassification = CustomerContent;
         }
-        field(2; Description; Text[50])
+        field(10; Description; Text[50])
         {
             Caption = 'Description';
             DataClassification = CustomerContent;
-        }
-    }
-    keys
-    {
-        key(PK; "Code")
-        {
-            Clustered = true;
         }
     }
 }

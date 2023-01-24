@@ -14,6 +14,7 @@ table 50100 "Radio Show"
         {
             Caption = 'Radio Show Type';
             DataClassification = CustomerContent;
+            TableRelation = "Radio Show Type";
         }
         field(20; Name; Text[50])
         {
@@ -73,6 +74,7 @@ table 50100 "Radio Show"
         field(1030; "News Required"; Boolean)
         {
             DataClassification = CustomerContent;
+            InitValue = true;
         }
         field(1040; "News Duration"; Integer)
         {
@@ -81,6 +83,7 @@ table 50100 "Radio Show"
         field(1050; "Sports Required"; Boolean)
         {
             DataClassification = CustomerContent;
+            InitValue = true;
         }
         field(1060; "Sports Duration"; Integer)
         {
@@ -89,6 +92,7 @@ table 50100 "Radio Show"
         field(1070; "Weather Required"; Boolean)
         {
             DataClassification = CustomerContent;
+            InitValue = true;
         }
         field(1080; "Weather Duration"; Integer)
         {
@@ -97,13 +101,6 @@ table 50100 "Radio Show"
         field(1090; "Date Filter"; Integer)
         {
             FieldClass = FlowFilter;
-        }
-    }
-    keys
-    {
-        key(PK; "No.")
-        {
-            Clustered = true;
         }
     }
 
