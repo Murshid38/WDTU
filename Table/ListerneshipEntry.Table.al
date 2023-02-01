@@ -40,7 +40,7 @@ table 50106 "Listerneship Entry"
             Caption = 'Listner Count';
             DataClassification = CustomerContent;
         }
-        field(70; "Audience Share"; Date)
+        field(70; "Audience Share"; Decimal)
         {
             Caption = 'Audience Share';
             DataClassification = CustomerContent;
@@ -50,6 +50,20 @@ table 50106 "Listerneship Entry"
             Caption = 'Age Demographic';
             DataClassification = CustomerContent;
             OptionMembers = ,"0-12","13-18","19-34","35-50","51+";
+        }
+    }
+
+    keys
+    {
+        key(PK; "Entry No.")
+        {
+            Clustered = true;
+        }
+        // We know that to do the necessary listenership analysis, the listenership ledger needs an additional key
+        // combined with SumIndexFields for totaling listener statistics:
+        key(Reporting; "Radio Show No.", Date, "Start Time", "Age Demographic")
+        {
+            SumIndexFields = "Listner Count", "Audience Share";
         }
     }
 }

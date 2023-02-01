@@ -16,7 +16,6 @@ page 50101 "Radio Show Card"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the No. field.';
-                    TableRelation = "Radio Show";
                 }
                 field("Radio Show Type"; Rec."Radio Show Type")
                 {

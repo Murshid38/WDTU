@@ -9,17 +9,32 @@ table 50100 "Radio Show"
         {
             Caption = 'No.';
             DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                Message('Hello World 3');
+            end;
         }
+
         field(10; "Radio Show Type"; Code[10])
         {
             Caption = 'Radio Show Type';
             DataClassification = CustomerContent;
             TableRelation = "Radio Show Type";
+
+            // trigger OnLookup()
+            // var
+            //     myInt: Integer;
+            // begin
+            //     Message('Hello World');
+            // end;
         }
         field(20; Name; Text[50])
         {
             Caption = 'Name';
             DataClassification = CustomerContent;
+            NotBlank = true;
+            CharAllowed = 'AM';
         }
         field(40; "Run Time"; Duration)
         {
@@ -39,7 +54,9 @@ table 50100 "Radio Show"
         field(100; "Average Listeners"; Decimal)
         {
             Caption = 'Average Listeners';
-            DataClassification = CustomerContent;
+            FieldClass = FlowField;
+            Editable = false;
+            CalcFormula = average("Listerneship Entry"."Listner Count" where("Radio Show No." = field("No."), Date = field("Date Filter")));
         }
         field(110; "Audience Share"; Decimal)
         {
@@ -76,7 +93,7 @@ table 50100 "Radio Show"
             DataClassification = CustomerContent;
             InitValue = true;
         }
-        field(1040; "News Duration"; Integer)
+        field(1040; "News Duration"; Duration)
         {
             DataClassification = CustomerContent;
         }
@@ -85,7 +102,7 @@ table 50100 "Radio Show"
             DataClassification = CustomerContent;
             InitValue = true;
         }
-        field(1060; "Sports Duration"; Integer)
+        field(1060; "Sports Duration"; Duration)
         {
             DataClassification = CustomerContent;
         }
@@ -94,13 +111,21 @@ table 50100 "Radio Show"
             DataClassification = CustomerContent;
             InitValue = true;
         }
-        field(1080; "Weather Duration"; Integer)
+        field(1080; "Weather Duration"; Duration)
         {
             DataClassification = CustomerContent;
         }
-        field(1090; "Date Filter"; Integer)
+        field(1090; "Date Filter"; Date)
         {
             FieldClass = FlowFilter;
+        }
+    }
+
+    keys
+    {
+        key(PK; "No.")
+        {
+            Clustered = true;
         }
     }
 
@@ -110,8 +135,4 @@ table 50100 "Radio Show"
         fieldgroup(Brick; "No.", "Radio Show Type", Name) { }
     }
 
-    // trigger OnInsert()
-    // begin
-    //     Message('Hello');
-    // end;
 }

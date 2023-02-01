@@ -10,10 +10,12 @@ table 50104 "Playlist Item Rate"
             dataclassification = customercontent;
             OptionMembers = Vendor,Customer;
         }
-        field(2; "Source No."; Integer)
+        field(2; "Source No."; Code[20])
         {
             caption = 'line no.';
             dataclassification = customercontent;
+            TableRelation = if ("Source Type" = const(Vendor)) Vendor."No." else
+            if ("Source Type" = const(Customer)) Customer."No.";
         }
         field(30; "Item No."; Code[20])
         {

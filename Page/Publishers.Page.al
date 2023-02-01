@@ -5,7 +5,7 @@ page 50108 Publishers
     PageType = List;
     SourceTable = Publisher;
     UsageCategory = Lists;
-    
+
     layout
     {
         area(content)

@@ -5,12 +5,12 @@ table 50103 "Playlist Line"
 
     fields
     {
-        field(1; "document no."; Code[20])
+        field(1; "Document No."; Code[20])
         {
             caption = 'document no.';
             dataclassification = customercontent;
         }
-        field(2; "line No."; Integer)
+        field(2; "Line No."; Integer)
         {
             caption = 'line no.';
             dataclassification = customercontent;
@@ -19,18 +19,21 @@ table 50103 "Playlist Line"
         {
             caption = 'type';
             dataclassification = customercontent;
-            optionmembers = ,resource,show,item;
+            optionmembers = ,Resource,Show,Item;
         }
         field(20; "No."; Code[20])
         {
             caption = 'no.';
             dataclassification = customercontent;
+            TableRelation = if (Type = const(Resource)) Resource."No." else
+            if (Type = const(Show)) "Radio Show"."No." else
+            if (Type = const(Item)) Item."No.";
         }
         field(30; "Data Format"; Option)
         {
             caption = 'data format';
             dataclassification = customercontent;
-            optionmembers = ,vinyl,cd,mp3,psa,advertisement;
+            optionmembers = ,Vinyl,Cd,Mp3,Psa,Advertisement;
         }
         field(40; Publisher; Code[10])
         {
@@ -56,6 +59,14 @@ table 50103 "Playlist Line"
         {
             caption = 'end time';
             dataclassification = customercontent;
+        }
+    }
+
+    keys
+    {
+        key(PK; "Document No.", "Line No.")
+        {
+            Clustered = true;
         }
     }
 }

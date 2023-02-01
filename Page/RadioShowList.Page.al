@@ -70,8 +70,7 @@ page 50100 "Radio Show List"
     // {
     //     area(Processing)
     //     {
-
-    //         action(ImportData)
+    //         action("Import Data")
     //         {
     //             ApplicationArea = All;
 
@@ -81,6 +80,5 @@ page 50100 "Radio Show List"
     //             end;
     //         }
     //     }
-
     // }
 }
